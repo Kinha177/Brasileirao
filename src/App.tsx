@@ -1,3 +1,4 @@
+// ARQUIVO: src/App.tsx
 import { useState } from 'react';
 import Layout from './components/Layout';
 import ClassificacaoView from './components/ClassificacaoView';
@@ -5,6 +6,9 @@ import ClubesView from './components/ClubesView';
 import JogadoresView from './components/JogadoresView';
 import PartidasView from './components/PartidasView';
 import EstatisticasView from './components/EstatisticasView';
+// --- NOVOS IMPORTS ADICIONADOS ABAIXO ---
+import TemporadasView from './components/TemporadasView';
+import EstadiosView from './components/EstadiosView';
 
 function App() {
   const [currentView, setCurrentView] = useState('classificacao');
@@ -21,6 +25,11 @@ function App() {
         return <PartidasView />;
       case 'estatisticas':
         return <EstatisticasView />;
+      // --- NOVOS CASES ADICIONADOS ABAIXO ---
+      case 'temporadas':
+        return <TemporadasView />;
+      case 'estadios':
+        return <EstadiosView />;
       default:
         return <ClassificacaoView />;
     }

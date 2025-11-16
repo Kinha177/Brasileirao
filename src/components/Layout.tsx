@@ -1,5 +1,6 @@
+// ARQUIVO: src/components/Layout.tsx
 import { ReactNode } from 'react';
-import { Menu, Trophy, Users, Calendar, BarChart3, ShirtIcon } from 'lucide-react';
+import { Menu, Trophy, Users, Calendar, BarChart3, ShirtIcon, CalendarCheck, Landmark } from 'lucide-react'; // <<< ÍCONES ADICIONADOS
 
 interface LayoutProps {
   children: ReactNode;
@@ -14,6 +15,9 @@ export default function Layout({ children, currentView, onNavigate }: LayoutProp
     { id: 'jogadores', label: 'Jogadores', icon: Users },
     { id: 'partidas', label: 'Partidas', icon: Calendar },
     { id: 'estatisticas', label: 'Estatísticas', icon: BarChart3 },
+    // --- NOVOS ITENS ADICIONADOS ABAIXO ---
+    { id: 'temporadas', label: 'Temporadas', icon: CalendarCheck },
+    { id: 'estadios', label: 'Estádios', icon: Landmark },
   ];
 
   return (

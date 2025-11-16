@@ -144,9 +144,13 @@ export default function EstatisticasView() {
 
   const getJogadoresDaPartida = () => {
     if (!selectedPartida) return [];
-    const partida = partidas.find((p) => p.id_partida === selectedPartida);
+    
+    // Use == para comparar a string do select com o número do state
+    const partida = partidas.find((p) => p.id_partida == selectedPartida); // <<< MUDE AQUI (de === para ==)
+
     if (!partida) return [];
 
+    // Esta comparação (===) está correta, pois ambos são números vindos da API
     return jogadores.filter(
       (j) => j.id_clube === partida.id_clube_casa || j.id_clube === partida.id_clube_visitante
     );
